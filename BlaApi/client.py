@@ -4,18 +4,16 @@ import httpx
 import datetime
 from fake_useragent import UserAgent as ua
 
-class bla():
-	client = httpx.Client()
-	
+class Client():
+	client = httpx.Client() #instanciate 
+	#!BLA credentials must be passed in as string
 	def __init__(self, username: str, password: str):
-		if not isinstance(username, str) or not isinstance(password, str) or not username.strip() or not password.strip(): 
-			raise ValueError("Invalid input, please pass in BLA credentials as string.")
-		
+		#Random UserAgent
 		self.headers = {'UserAgent': str(ua().chrome)}
 		self.username = username
 		self.password = password
-		self.token = self.login()
-
+		self.token = self.login().get('token')
+		
 	def login(self):
 		# Construct API endpoint URL
 		endpoint = "login"
@@ -23,27 +21,52 @@ class bla():
 		
 		# Send POST request to API endpoint with headers
 		response = self.client.post(api_url, headers=self.headers)
+		#!Raise an error if POST fails
 		response.raise_for_status()
 		
-		# Retrieve authentication token from response JSON data
+		#Parse JSON response
 		data = json.loads(response.content)['data']
+
+		#Retrieve access token & student info from JSON response
 		token = data.get('accessToken')
-		
-		# Raise an error if authentication token is not found in response
-		if not token:
-			raise ValueError("Authentication token not found in response, request possibly failed.")
-		
-		return token
-	
+		if token is None:
+			raise ValueError("Access token not found in response.")
+		student_info = data.get('students')
+
+		#Return student ids and student names as lists
+		student_ids = [] #Initialize
+		student_names = [] #Initialize
+
+		for s in student_info:
+			#Return student ids as list
+			id = s.get('id')
+			student_ids.append(id)
+
+			#Return student name as list
+			name = s.get('studentName')
+			student_names.append(name)
+
+
+		#Return retrieved data as dictionary
+		output = {
+			'token': token,
+			'student_id': student_ids,
+			'student_name': student_names
+
+		}
+		return output
+
 	def diary_list(self):
+		# Construct API endpoint URL
 		endpoint = "diaryList"
 		api_url = f"https://beaconlightacademy.edu.pk/app/restapi.php?endpoint={endpoint}&accessToken={self.token}&year=1"
 		
 		# Send POST request to API endpoint with headers
 		response = self.client.post(api_url, headers=self.headers)
+		#!Raise an error if POST fails
 		response.raise_for_status()
 		
-		# Retrieve authentication token from response JSON data
+		#Retreive diary list from JSON data
 		data = json.loads(response.content)['data']
 		
 		return data
@@ -63,6 +86,7 @@ class bla():
 
 		# Format date string
 		formatted_date = f"{abbreviated_day_of_week}, {current_day}/{current_month}/{current_date.year}"
-
+		
+		#Retreive current date in a format that the api requires. 
+		#EXAMPLE: "Tue, 9/11/2001"
 		return formatted_date
-	
