@@ -26,9 +26,11 @@ class Diary:
                 
         return output
     
-        #Retreive current date in a format that the api requires. 
-        #EXAMPLE: "Tue, 9/11/2001"
+
     def get_current_date(self):
+        
+        # Retreive current date in a format that the api requires. 
+        #! EXAMPLE: "Tue, 9/11/2001"
 
         # Get current date and day of week
         current_date = datetime.datetime.today()
@@ -53,10 +55,26 @@ class Diary:
         # if student id is a match then
         # return the diaries as a list
 
-        output = []
+        output = [] # initialize
         for d in diary:
             if d['date'] == date:
                 notification_id = d['id']   
                 response = self.client.get_diary_data(notification_id)
                 output.append(response)
         return output
+
+    def search_been_read(self, been_read=True):
+
+        diary = self.client.diary_list()
+        # parse output from diary list function
+        # if diary has been read/unread then
+        # return the diaries as a list
+
+        output = [] # initialize
+        for d in diary:
+            if d['bRead'] == been_read:
+                output.append[d]
+        if output:
+            return output
+        else:
+            return None
