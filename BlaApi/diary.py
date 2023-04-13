@@ -78,3 +78,5 @@ class Diary:
             return output
         else:
             return None
+
+
