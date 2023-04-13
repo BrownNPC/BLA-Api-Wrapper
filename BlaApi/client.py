@@ -71,8 +71,6 @@ class Client():
         
         return data
 
-
-
     def get_diary_data(self, notification_id):
         # Construct API endpoint URL
         endpoint = "diaryDetails"
