@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-setup.cfg
-BlaApi/BlaApi.egg-info/PKG-INFO
-BlaApi/BlaApi.egg-info/SOURCES.txt
-BlaApi/BlaApi.egg-info/dependency_links.txt
-BlaApi/BlaApi.egg-info/top_level.txt
