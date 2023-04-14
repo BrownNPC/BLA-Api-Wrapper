@@ -3,7 +3,7 @@ import json
 import httpx
 from fake_useragent import UserAgent as ua
 
-class Client():
+class Client:
     client = httpx.Client() # instanciate 
     #! BLA credentials must be passed in as string
     def __init__(self, username: str, password: str):
@@ -55,7 +55,7 @@ class Client():
         }
         return output
 
-    def diary_list(self):
+    def get_diary_list(self):
         # Construct API endpoint URL
         endpoint = "diaryList"
         api_url = f"https://beaconlightacademy.edu.pk/app/restapi.php?endpoint={endpoint}&accessToken={self.token}&year=1"
@@ -71,18 +71,26 @@ class Client():
         
         return data
 
-    def get_diary_data(self, notification_id):
-        # Construct API endpoint URL
-        endpoint = "diaryDetails"
-        api_url = f"https://beaconlightacademy.edu.pk/app/restapi.php?endpoint={endpoint}&accessToken={self.token}&appUserNotificationId={notification_id}"
+    def get_diary_data(self, notification_ids: list):
+        
+        output = [] # initialize
 
-        # Send POST request to API endpoint with headers
-        response = self.client.post(api_url, headers=self.headers)
+        if not isinstance(notification_ids, list): # error check
+            raise ValueError("Notification IDs must be passed as a list")
+        
+        for notification_id in notification_ids:
+            # Construct API endpoint URL
+            endpoint = "diaryDetails"
+            api_url = f"https://beaconlightacademy.edu.pk/app/restapi.php?endpoint={endpoint}&accessToken={self.token}&appUserNotificationId={notification_id}"
+            
+            # Send POST request to API endpoint with headers
+            response = self.client.post(api_url, headers=self.headers)
+            
+            #! Raise an error if POST fails
+            response.raise_for_status()
+            
+            # Retrieve diary data from JSON response
+            data = json.loads(response.content)['data']
+            output.append(data)
 
-        #! Raise an error if POST fails
-        response.raise_for_status()
-
-        # Retreive diary data from JSON response
-        data = json.loads(response.content)['data']
-
-        return data
+        return output

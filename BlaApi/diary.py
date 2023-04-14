@@ -6,26 +6,34 @@ class Diary:
         self.username = username
         self.password = password
         self.client = Client(self.username, self.password)
-        self.diary_list = self.client.diary_list()
-    
-    def search_by_student_id(self, student_id):
 
-        diary = self.client.diary_list()
+    def search_by_student_id(self, student_id, passthru=None):
+
+        diary = self.client.get_diary_list()
 
         # parse output from diary list function
         # if student id is a match then
         # return the diaries as a list
 
-        output = [] # initialize
+        # allows passing of already searched list 
+        # to perform further sorting
 
-        for d in diary:
-            if d["studentId"] == student_id:
-                notification_id = d['id']
-                response = self.client.get_diary_data(notification_id)
-                output.append(response)
-                
-        return output
-    
+        output = [] # initialize
+        if passthru:
+            for p in passthru:
+                for d in diary:
+                    if p == d['id'] and d['studentId'] == student_id:
+                        output.append(d['id'])
+
+        if not passthru:
+            for d in diary:
+                if d['studentId'] == student_id:  
+                    output.append(d['id'])
+        if output:
+            return output
+        else:
+            print("EXCEPTION: No entries for provided student id.")
+            return None
 
     def get_current_date(self):
         
@@ -48,35 +56,64 @@ class Diary:
         
         return formatted_date
 
-    def search_by_date(self, date):
+    def search_by_date(self, date, passthru= None):
 
-        diary = self.client.diary_list()
+        diary = self.client.get_diary_list()
         # parse output from diary list function
         # if student id is a match then
         # return the diaries as a list
 
+        # allows passing of already searched list 
+        # to perform further sorting
+
+
         output = [] # initialize
-        for d in diary:
-            if d['date'] == date:
-                notification_id = d['id']   
-                response = self.client.get_diary_data(notification_id)
-                output.append(response)
-        return output
 
-    def search_been_read(self, been_read=True):
+        if passthru:
+            for p in passthru:
+                for d in diary:
+                    if p == d['id'] and d['date'] == date:
+                        output.append(d['id'])
 
-        diary = self.client.diary_list()
+        if not passthru:
+            for d in diary:
+                if d['date'] == date:
+                    output.append(d['id'])
+        if output:
+            return output
+        else:
+            print("EXCEPTION: No matching entries for the specified date.")
+            return None
+
+
+    def search_been_read(self, been_read=True, passthru=None):
+
+        diary = self.client.get_diary_list()
+
         # parse output from diary list function
         # if diary has been read/unread then
         # return the diaries as a list
 
+        # allows passing of already searched list 
+        # to perform further sorting
+        # pass in a list of notification ids as passthru arg
+         
+        
         output = [] # initialize
-        for d in diary:
-            if d['bRead'] == been_read:
-                output.append[d]
+        
+        been_read = str(int(been_read))
+        if passthru:
+            for p in passthru:
+                for d in diary:
+                    if p == d['id'] and d['bRead'] == been_read:
+                        output.append(d['id'])
+
+        else:
+            for d in diary:
+                if d['bRead'] == been_read:
+                    output.append(d['id'])
         if output:
             return output
         else:
+            print("EXCEPTION: No unread/read diaries found.")
             return None
-
-
