@@ -1,6 +1,4 @@
-# BLA-API-Wrapper.
-
----
+# BLA-API-Wrapper. 
 
 ### Description
 
@@ -14,7 +12,7 @@ The app itself is used to view homework assignments.
 - [Getting Started](#Getting Started)
   
 
-### Installation
+#### Installation
 
 ```shell
 pip install BlaApi
