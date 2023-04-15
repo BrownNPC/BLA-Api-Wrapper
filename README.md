@@ -3,7 +3,7 @@
 
 ### Description
 
-This is a wrapper I made to interact with my school's web application, using python. The app itself is used to view homework assignments.
+A wrapper to interact with my school's homework app, using python.
 
 ### Table of Contents
 
