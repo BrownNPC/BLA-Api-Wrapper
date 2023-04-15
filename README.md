@@ -1,24 +1,23 @@
-
 # BLA-API-Wrapper.
 
-### Description
+## Description
 
-A wrapper to interact with my school's homework app
+##### A light weight python library to interact with my school's homework app.
 
 ### Table of Contents
 
--   [Installation](#Installation)
-    
--   [Getting Started](#Getting-Started)
-    
+- [Installation](#Installation)
+  
+- [Getting Started](#Quick-Start)
+  
 
-#### Installation
+## Installation
 
 ```shell
 pip install BlaApi
 ```
 
-#### Getting Started
+## Quick Start
 
 > The code below returns a list of **'notification_ids'** The date needs to be in the format **'Abbreviated_Day, DD/MM/YYYY'**
 
@@ -32,13 +31,13 @@ notification_ids = d.search_by_date("Thu, 13/04/2023")
 print(notification_ids)
 ```
 
-**Output:**
+#### Output:
 
-```python
+```shell
 ['3049357', '3049213', '3038795', '3038038', '3036497', '3036305']
 ```
 
-> The output is a list of notification ids, we can use to make api calls and retrieve useful information
+> The output is a list of notification ids, we can use to make api calls and retrieve useful information.
 
 ```python
 #from BlaApi.client import Client
@@ -48,4 +47,4 @@ diary_data = c.get_diary_data(out)
 print(diary_data)
 ```
 
-> The output would be a list of dictionaries corresponding to the notification id provided.
+> The output would be a list of dictionaries which contain details for the corresponding notification id.
