@@ -1,18 +1,24 @@
 # BLA-API-Wrapper. 
 
 ### Description
+
 This is a wrapper I made to interact with my school's web application, using python.
 The app itself is used to view homework assignments.
+
 ### Table of Contents
+
 - [Installation](#Installation)
+  
 - [Getting Started](#Getting Started)
+  
+
 #### Installation
 
 ```shell
 pip install BlaApi
 ```
 
-### Getting Started
+#### Getting Started
 
 The code below returns a list of **'notification_ids'**
 The date needs to be in the format **'Abbreviated_Day, DD/MM/YYYY'**
