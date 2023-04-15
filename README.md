@@ -1,17 +1,11 @@
 # BLA-API-Wrapper. 
 
 ### Description
-
 This is a wrapper I made to interact with my school's web application, using python.
 The app itself is used to view homework assignments.
-
 ### Table of Contents
-
 - [Installation](#Installation)
-  
 - [Getting Started](#Getting Started)
-  
-
 #### Installation
 
 ```shell
