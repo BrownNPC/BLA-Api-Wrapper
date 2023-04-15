@@ -3,7 +3,7 @@
 
 ### Description
 
-A wrapper to interact with my school's homework app, using python.
+A wrapper to interact with my school's homework app
 
 ### Table of Contents
 
