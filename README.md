@@ -10,11 +10,21 @@
   
 - [Getting Started](#Quick-Start)
   
+- [Docs](#Doccumentation)
+  
 
 ## Installation
 
+The library is available on PyPI, install using pip.
+
 ```shell
 pip install BlaApi
+```
+
+Or update it.
+
+```shell
+pip install BlaApi --upgrade
 ```
 
 ## Quick Start
@@ -31,7 +41,7 @@ notification_ids = d.search_by_date("Thu, 13/04/2023")
 print(notification_ids)
 ```
 
-##### Output:
+###### Output:
 
 ```shell
 ['3049357', '3049213', '3038795', '3038038', '3036497', '3036305']
@@ -49,7 +59,7 @@ print(diary_data)
 
 The output consists of a list of dictionaries which contain details for the corresponding notification id.
 
-##### Output:
+###### Output:
 
 ```python
 [{
@@ -90,6 +100,8 @@ c = Client(username, password)
 d = Diary(username, password)
 ```
 
+> Whenever I say 'Client', or 'Diary', it means im talking about the files [client.py]([BLA-Api-Wrapper/client.py at master · Omer-Farooqui/BLA-Api-Wrapper · GitHub](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py)), and [diary.py]([BLA-Api-Wrapper/client.py at master · Omer-Farooqui/BLA-Api-Wrapper · GitHub](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py))
+
 The **'login()'** method from **'Client'** allows you to retrieve information such as: auth token, student names, student ids .
 
 The **'get_diary_list()'** method from **'Client'** will return a list of all the diaries available in the app's database, which allows you to retrieve information such as: date posted, subject name, assignment id, notification id (id), title, description, diary type (cw/hw), if the diary has been read (bRead) and the student id which the diary corresponds to.
@@ -111,3 +123,8 @@ The **'get_current_date()'** method from **'Diary'** returns today's date in a f
   - [ ] Attachments
     
 - [ ] Make better doccumentation
+  
+
+### My motivation to create this
+
+Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. This is also helping me learn new skills that will benefit me later in life.
