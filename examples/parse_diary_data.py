@@ -1,12 +1,10 @@
 from BlaApi.diary import Diary
-import os
 from html2text import html2text as h2t #pip install html2text
-from dotenv import load_dotenv
 
 
 load_dotenv()
-username = os.environ['BLAUSERNAME']
-password = os.environ['BLAPASSWORD']
+username = # your bla username
+password = # your bla password
 d = Diary(username=username, password=password)
 
 
@@ -14,7 +12,7 @@ d = Diary(username=username, password=password)
 
 date = 'Thu, 13/04/2023'
 
-#Select which student on your account to return their diary.
+#Select student on your account to return their diary.
 
 student_number = 0
 
@@ -74,4 +72,6 @@ def format_diary():
 
 
 diaries = filter_diary()
-print(diaries[1])
+
+for d in diaries:
+    print(d)
