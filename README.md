@@ -6,9 +6,9 @@
 
 ### Table of Contents
 
-- [Getting Started](#Quick-Start)
+- [Quick-Start](#Quick-Start)
 
-- [Docs](#Doccumentation)
+- [Docs](#Documentation)
 
 - Useful Links:
   
