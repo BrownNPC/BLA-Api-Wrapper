@@ -16,6 +16,7 @@ BLA-API-Wrapper.
 
 ## Installation
 
+<<<<<<< HEAD
 The library is available on [PyPI](https://pypi.org/project/BlaApi/), install using pip.
 =======
 
@@ -33,6 +34,9 @@ The library is available on [PyPI](https://pypi.org/project/BlaApi/), install us
 
 The library is available on [PyPI]([BlaApi · PyPI](https://pypi.org/project/BlaApi/)), install using pip.
 >>>>>>> 23c41d0 (Minor changes)
+=======
+The library is available on PyPI, install using pip.
+>>>>>>> parent of fae078e (Update README.md)
 
 ```shell
 pip install BlaApi
@@ -157,6 +161,7 @@ The **'get_current_date()'** method from **'Diary'** returns today's date in a f
 ### My motivation to create this
 
 Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. It's also an excuse to learn new skills that will benefit me later in life.
+<<<<<<< HEAD
 Feel free to open an issue if you have any questions, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you want 👉👈.
 =======
 - [ ]  Add some way to parse the diary data
@@ -175,3 +180,5 @@ Simply put, I found my school's app to be subpar, so I'm attempting to create a 
 
 Feel free to open an [issue](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/issues) if you have any questions, and star the [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you want 👉👈.
 >>>>>>> 23c41d0 (Minor changes)
+=======
+>>>>>>> parent of fae078e (Update README.md)
