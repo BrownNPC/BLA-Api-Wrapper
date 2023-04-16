@@ -6,11 +6,16 @@ class Diary:
         self.username = username
         self.password = password
         self.client = Client(self.username, self.password)
+        self.student_ids = self.client.student_ids
 
-    def search_by_student_id(self, student_id, passthru=None):
+    def search_by_student(self, student_number=0, passthru=None):
 
         diary = self.client.get_diary_list()
 
+        # select the student id on the index: student_number
+
+        student_id = self.student_ids[student_number]
+        
         # parse output from diary list function
         # if student id is a match then
         # return the diaries as a list

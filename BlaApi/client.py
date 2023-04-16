@@ -11,6 +11,8 @@ class Client:
         self.username = username
         self.password = password
         self.token = self.login().get('token')
+        self.student_ids = self.login().get('student_ids')
+        self.student_names = self.login().get('student_names')
         
     def login(self):
         # Construct API endpoint URL
@@ -48,8 +50,8 @@ class Client:
         # Return retrieved data as dictionary
         output = {
             'token': token,
-            'student_id': student_ids,
-            'student_name': student_names
+            'student_ids': student_ids,
+            'student_names': student_names
 
         }
         return output
