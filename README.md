@@ -8,7 +8,11 @@
 
 - [Quick-Start](#Quick-Start)
 
+<<<<<<< HEAD
 - [Docs](#Documentation)
+=======
+- [Documentation](#Documentation)
+>>>>>>> 82accce (Update README.md)
 
 - Useful Links:
   
@@ -87,7 +91,7 @@ The output consists of a list of dictionaries which contain details for the corr
 ]
 ```
 
-*Currently, there is no built-in way to parse this output, but I might add it in the future if needed. Check out some examples or read the [doccumentation.](#Doccumentation)*
+*Currently, there is no built-in way to parse this output, but I might add it in the future if needed. Check out some [examples](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/tree/master/examples) or read the [documentation.](#Documentation)*
 
 ## Documentation
 
