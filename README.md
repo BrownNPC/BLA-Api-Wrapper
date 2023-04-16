@@ -100,7 +100,7 @@ c = Client(username, password)
 d = Diary(username, password)
 ```
 
-> Whenever I say 'Client', or 'Diary', it means im talking about the files [client.py]([BLA-Api-Wrapper/client.py at master · Omer-Farooqui/BLA-Api-Wrapper · GitHub](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py)), and [diary.py]([BLA-Api-Wrapper/client.py at master · Omer-Farooqui/BLA-Api-Wrapper · GitHub](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py))
+> Whenever I say 'Client', or 'Diary', it means im talking about the files [client.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py)), and [diary.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py))
 
 The **'login()'** method from **'Client'** allows you to retrieve information such as: auth token, student names, student ids .
 
