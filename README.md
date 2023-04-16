@@ -15,7 +15,7 @@
 
 ## Installation
 
-The library is available on PyPI, install using pip.
+The library is available on [PyPI](https://pypi.org/project/BlaApi/), install using pip.
 
 ```shell
 pip install BlaApi
@@ -127,3 +127,4 @@ The **'get_current_date()'** method from **'Diary'** returns today's date in a f
 ### My motivation to create this
 
 Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. It's also an excuse to learn new skills that will benefit me later in life.
+Feel free to open an issue if you have any questions, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you want 👉👈.
