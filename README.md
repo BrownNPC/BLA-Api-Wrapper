@@ -1,4 +1,4 @@
-# BLA-API-Wrapper.
+BLA-API-Wrapper.
 
 ## Description
 
@@ -100,7 +100,7 @@ c = Client(username, password)
 d = Diary(username, password)
 ```
 
-> Whenever I say 'Client', or 'Diary', it means im talking about the files [client.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py), and [diary.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py)
+> Whenever I mention **'Client'**, or **'Diary'**, it means im talking about the files [client.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py), and [diary.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py)
 
 The **'login()'** method from **'Client'** allows you to retrieve information such as: auth token, student names, student ids .
 
@@ -123,8 +123,7 @@ The **'get_current_date()'** method from **'Diary'** returns today's date in a f
   - [ ] Attachments
     
 - [ ] Make better doccumentation
-  
 
 ### My motivation to create this
 
-Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. This is also helping me learn new skills that will benefit me later in life.
+Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. It's also an excuse to learn new skills that will benefit me later in life.
