@@ -8,11 +8,10 @@
 
 - [Quick-Start](#Quick-Start)
 
-<<<<<<< HEAD
-- [Docs](#Documentation)
-=======
+
+
 - [Documentation](#Documentation)
->>>>>>> 82accce (Update README.md)
+
 
 - Useful Links:
   
