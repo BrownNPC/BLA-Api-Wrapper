@@ -6,24 +6,11 @@
 
 ### Table of Contents
 
-- [Installation](#Installation)
-
-  
-- [Getting Started](#Quick-Start)
-  
-- [Docs](#Doccumentation)
-  
-
-## Installation
-
-The library is available on [PyPI](https://pypi.org/project/BlaApi/), install using pip.
-=======
-
 - [Getting Started](#Quick-Start)
 
 - [Docs](#Doccumentation)
 
-- Useful Links
+- Useful Links:
   
   - [PyPI](https://pypi.org/project/BlaApi/)
   
@@ -31,12 +18,7 @@ The library is available on [PyPI](https://pypi.org/project/BlaApi/), install us
 
 ## Installation
 
-The library is available on [PyPI]([BlaApi · PyPI](https://pypi.org/project/BlaApi/)), install using pip.
-
-=======
-The library is available on PyPI, install it using pip.
-
-
+The library is available on [PyPI](https://pypi.org/project/BlaApi/), install using pip.
 
 ```shell
 pip install BlaApi
@@ -105,7 +87,7 @@ The output consists of a list of dictionaries which contain details for the corr
 ]
 ```
 
-> Currently, there is no built-in way to parse this output, but I might add it in the future if needed. 
+*Currently, there is no built-in way to parse this output, but I might add it in the future if needed. Check out some examples or read the [doccumentation.](#Doccumentation)*
 
 ## Documentation
 
@@ -121,7 +103,7 @@ c = Client(username, password)
 d = Diary(username, password)
 ```
 
-> Whenever I mention **'Client'**, or **'Diary'**, it means im talking about the files [client.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py), and [diary.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py) 
+> Whenever I mention **'Client'**, or **'Diary'**, it means that i'm talking about the files [client.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py), and [diary.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py). Also keep in mind that In the api, the 'notificationId' and 'id' variables are used interchangeably.
 
 The **'login()'** method from **'Client'** allows you to retrieve information such as: auth token, student names, student ids .
 
@@ -133,20 +115,23 @@ The **'Diary'** class contains many methods to parse and sort through the diary 
 
 The **'get_current_date()'** method from **'Diary'** returns today's date in a format that the api needs to function. (Abbreviated_Day, DD/MM/YYYY)
 
+The **'search_by_student'** method from **'Diary'** returns the notification_ids for one of the students registered on your account. By default it sets student_number = 0, meaning it will return diaries for the first student by default.
+
+The other methods from **'Diary'** are: **'search_by_date(date)'**, and **'search_been_read(True/False)'**. They are self explanatory.
+
 ## To-Do
 
 - [ ] Add some way to parse the diary data
   
   - [ ] Comments
-    
+  
   - [ ] Description
-    
+  
   - [ ] Attachments
-    
+
 - [ ] Make better doccumentation
 
 ### My motivation to create this
 
-Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. It's also an excuse to learn new skills that will benefit me later in life.
+Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. *(It's also an excuse to learn new skills)*
 Feel free to open an issue if you have any questions, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you want 👉👈.
-
