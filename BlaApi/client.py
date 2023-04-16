@@ -1,4 +1,3 @@
-import os
 import json
 import httpx
 from fake_useragent import UserAgent as ua
