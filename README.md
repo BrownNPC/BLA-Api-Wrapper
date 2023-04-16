@@ -1,4 +1,4 @@
-BLA-API-Wrapper.
+# BLA-API-Wrapper.
 
 ## Description
 
@@ -7,7 +7,7 @@ BLA-API-Wrapper.
 ### Table of Contents
 
 - [Installation](#Installation)
-<<<<<<< HEAD
+
   
 - [Getting Started](#Quick-Start)
   
@@ -16,8 +16,6 @@ BLA-API-Wrapper.
 
 ## Installation
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 The library is available on [PyPI](https://pypi.org/project/BlaApi/), install using pip.
 =======
 
@@ -34,13 +32,11 @@ The library is available on [PyPI](https://pypi.org/project/BlaApi/), install us
 ## Installation
 
 The library is available on [PyPI]([BlaApi · PyPI](https://pypi.org/project/BlaApi/)), install using pip.
->>>>>>> 23c41d0 (Minor changes)
+
 =======
-The library is available on PyPI, install using pip.
->>>>>>> parent of fae078e (Update README.md)
-=======
-The library is available on PyPI, install using pip.
->>>>>>> parent of fae078e (Update README.md)
+The library is available on PyPI, install it using pip.
+
+
 
 ```shell
 pip install BlaApi
@@ -109,11 +105,7 @@ The output consists of a list of dictionaries which contain details for the corr
 ]
 ```
 
-<<<<<<< HEAD
-> Currently, there is no built-in way to parse this output, but I might add it in the future if needed.
-=======
 > Currently, there is no built-in way to parse this output, but I might add it in the future if needed. 
->>>>>>> 23c41d0 (Minor changes)
 
 ## Documentation
 
@@ -129,19 +121,11 @@ c = Client(username, password)
 d = Diary(username, password)
 ```
 
-<<<<<<< HEAD
-> Whenever I mention **'Client'**, or **'Diary'**, it means im talking about the files [client.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py), and [diary.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py)
-
-The **'login()'** method from **'Client'** allows you to retrieve information such as: auth token, student names, student ids .
-
-The **'get_diary_list()'** method from **'Client'** will return a list of all the diaries available in the app's database, which allows you to retrieve information such as: date posted, subject name, assignment id, notification id (id), title, description, diary type (cw/hw), if the diary has been read (bRead) and the student id which the diary corresponds to.
-=======
 > Whenever I mention **'Client'**, or **'Diary'**, it means im talking about the files [client.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/client.py), and [diary.py](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/blob/master/BlaApi/diary.py) 
 
 The **'login()'** method from **'Client'** allows you to retrieve information such as: auth token, student names, student ids .
 
 The **'get_diary_list()'** method from **'Client'**  will return a list of all the diaries available in the app's database, which allows you to retrieve information such as: date posted, subject name, assignment id, notification id (id), title, description, diary type (cw/hw), if the diary has been read (bRead) and the student id which the diary corresponds to.
->>>>>>> 23c41d0 (Minor changes)
 
 The **'get_diary_data()'** method from **'Client'** allows you to get the content of the diary itself, by passing a list of notification ids. it has options such as: student id, app diary id (assignment id), attachment id, comments and the rest is the same as **get_diary_list()**
 
@@ -151,7 +135,6 @@ The **'get_current_date()'** method from **'Diary'** returns today's date in a f
 
 ## To-Do
 
-<<<<<<< HEAD
 - [ ] Add some way to parse the diary data
   
   - [ ] Comments
@@ -165,27 +148,5 @@ The **'get_current_date()'** method from **'Diary'** returns today's date in a f
 ### My motivation to create this
 
 Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. It's also an excuse to learn new skills that will benefit me later in life.
-<<<<<<< HEAD
-<<<<<<< HEAD
 Feel free to open an issue if you have any questions, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you want 👉👈.
-=======
-- [ ]  Add some way to parse the diary data
-  
-  - [ ]  Comments
-  
-  - [ ]  Description
-  
-  - [ ]  Attachments
 
-- [ ]  Make better doccumentation 
-
-### My motivation to create this
-
-Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. *(It's also an excuse to learn new skills)*
-
-Feel free to open an [issue](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/issues) if you have any questions, and star the [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you want 👉👈.
->>>>>>> 23c41d0 (Minor changes)
-=======
->>>>>>> parent of fae078e (Update README.md)
-=======
->>>>>>> parent of fae078e (Update README.md)
