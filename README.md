@@ -2,7 +2,7 @@
 
 ## Description
 
-##### A light weight python library to interact with the beacon light api. (https://beaconlightacademy.edu.pk/app/)
+##### A light weight python library to interact with the [Beacon Light Academy's API.](https://beaconlightacademy.edu.pk/app/)
 
 ### Table of Contents
 
