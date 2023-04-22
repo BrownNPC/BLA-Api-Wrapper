@@ -145,4 +145,4 @@ The other methods from **'Diary'** are: **'search_by_date(date)'**, and **'searc
 ### My motivation to create this
 
 Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. *(It's also an excuse to learn new skills)*
-Feel free to open an [issue](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/issues) if wans to send hate comments, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you don't 👉👈.
+Feel free to open an [issue](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/issues) if you want to send hate comments, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you don't 👉👈.
