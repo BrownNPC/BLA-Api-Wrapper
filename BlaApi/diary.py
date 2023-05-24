@@ -37,9 +37,8 @@ class Diary:
         if output:
             return output
         else:
-            print("EXCEPTION: No entries for provided student id.")
-            return None
-
+            raise LookupError('No entries for provided student id.')
+        
     def get_current_date(self):
         
         # Retreive current date in a format that the api requires. 
@@ -87,8 +86,7 @@ class Diary:
         if output:
             return output
         else:
-            print("EXCEPTION: No matching entries for the specified date.")
-            return None
+            raise LookupError('No matching entries for the specified date.')
 
 
     def search_been_read(self, been_read=True, passthru=None):
@@ -120,5 +118,4 @@ class Diary:
         if output:
             return output
         else:
-            print("EXCEPTION: No unread/read diaries found.")
-            return None
+            raise LookupError('No unread/read diaries found.')

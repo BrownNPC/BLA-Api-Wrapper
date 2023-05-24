@@ -21,16 +21,17 @@ class Client:
         
         # Send POST request to API endpoint with headers
         response = self.client.post(api_url, headers=self.headers)
+        
         #! Raise an error if POST fails
         response.raise_for_status()
         
-        # Parse JSON response
+        # error handling
+        if json.loads(response.content).get('success') == False:
+            raise ValueError(json.loads(response.content).get('error'))
+        
         data = json.loads(response.content)['data']
-
         # Retrieve access token & student info from JSON response
         token = data.get('accessToken')
-        if token is None:
-            raise ValueError("Access token not found in response.")
         student_info = data.get('students')
 
         # Return student ids and student names as lists
@@ -63,7 +64,11 @@ class Client:
         
         # Send POST request to API endpoint with headers
         response = self.client.post(api_url, headers=self.headers)
-
+        
+        # error handling
+        if json.loads(response.content).get('success') == False:
+            raise ValueError(json.loads(response.content).get('error'))
+        
         #! Raise an error if POST fails
         response.raise_for_status()
         
@@ -89,6 +94,11 @@ class Client:
             
             #! Raise an error if POST fails
             response.raise_for_status()
+            
+            
+            # error handling
+            if json.loads(response.content).get('success') == False:
+                raise ValueError(json.loads(response.content).get('error'))
             
             # Retrieve diary data from JSON response
             data = json.loads(response.content)['data']
