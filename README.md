@@ -2,9 +2,13 @@
 
 ## Description
 
-##### A light weight python library to interact with my school's homework app.
+##### A light weight python library to interact with [Beacon Light Academy's Homework App.](https://beaconlightacademy.edu.pk/app/)
 
 ### Table of Contents
+
+- [Installation](#Installation)
+
+
 
 - [Quick-Start](#Quick-Start)
 
@@ -141,4 +145,8 @@ The other methods from **'Diary'** are: **'search_by_date(date)'**, and **'searc
 ### My motivation to create this
 
 Simply put, I found my school's app to be subpar, so I'm attempting to create a better one. *(It's also an excuse to learn new skills)*
-Feel free to open an [issue](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/issues) if you have any questions, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) 👉👈.
+
+
+
+
+Feel free to open an [issue](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/issues) if you want to send hate comments, and star my [repo](https://github.com/Omer-Farooqui/BLA-Api-Wrapper) if you don't 👉👈.
