@@ -2,7 +2,7 @@
 
 ## Description
 
-##### A light weight python library to interact with [Beacon Light Academy's Homework App.](https://beaconlightacademy.edu.pk/app/)
+##### Reverse engineering of [Beacon Light Academy's Homework App.](https://beaconlightacademy.edu.pk/app/)
 
 ### Table of Contents
 

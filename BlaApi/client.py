@@ -3,7 +3,7 @@ import httpx
 from fake_useragent import UserAgent as ua
 
 class Client:
-    client = httpx.Client() # instanciate 
+    client = httpx.Client(verify=False) # instanciate 
     #! BLA credentials must be passed in as string
     def __init__(self, username: str, password: str):
         # Random UserAgent
