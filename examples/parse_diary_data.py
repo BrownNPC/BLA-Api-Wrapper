@@ -2,7 +2,7 @@ from BlaApi.diary import Diary
 from html2text import html2text as h2t #pip install html2text
 
 
-load_dotenv()
+
 username = # your bla username
 password = # your bla password
 d = Diary(username=username, password=password)
