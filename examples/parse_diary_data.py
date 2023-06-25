@@ -1,77 +1,77 @@
-from BlaApi.diary import Diary
+from BlaApi import Client
 from html2text import html2text as h2t #pip install html2text
 
 
 
-username = # your bla username
-password = # your bla password
-d = Diary(username=username, password=password)
+username = 'my username'
+password = 'my password'
+c = Client(username=username, password=password)
 
 
 #return diaries from this date
 
-date = 'Thu, 13/04/2023'
+date = c.get_current_date()
 
 #Select student on your account to return their diary.
 
-student_number = 0
+student_id = c.student_ids[0]
 
 
-def filter_diary(date=date, been_read=True, student_number=student_number):
+def filter_diary(date=date, been_read=True):
 
     # sort by student, date, and been read then return the diary data by
     # sending notification ids to api endpoint.
 
-    out = d.search_by_student(student_number=student_number)
+    out = c.search_by_student(student_id=student_id)
 
-    out  = d.search_by_date(date=date, passthru=out)
+    out  = c.search_by_date(date=date, passthru=out)
 
-    out = d.search_been_read(been_read=been_read, passthru=out)
+    out = c.search_been_read(been_read=been_read, passthru=out)
 
-    return d.client.get_diary_data(notification_ids=out)
+    return c.get_diary_data(notification_ids=out)
 
 def format_diary():
-    diary = filter_diary()
 
-    if diary:
-        output = []
+    try:
+        diary = filter_diary()
+    except:
+        print('No Diaries founc.')
+        return []
 
-        for d in diary:
-            # parse html and convert into markdown.
+    output = []
 
-            details = h2t(d.get('details'))
+    for d in diary:
+        # parse html and convert into markdown.
 
-            # remove markdown tags to get plain text.
+        details = h2t(c.get('details'))
 
-            details = details.replace('**', '')
-            details = details.replace('\\', '')
-            details = details.replace('   ', '')
-            details = details.replace('_', '')
+        # remove markdown tags to get plain text.
 
-            # If 'subject' field is empty, then it's a notice.
+        details = details.replace('**', '')
+        details = details.replace('\\', '')
+        details = details.replace('   ', '')
+        details = details.replace('_', '')
 
-            if d.get('subject'):
-                subject = f"Subject: {d.get('subject')}"
-            else:
-                subject = f"Notice"
+        # If 'subject' field is empty, then it's a notice.
 
-            # Append the attachment id to a link which redirects to the attachment.
+        if c.get('subject'):
+            subject = f"Subject: {c.get('subject')}"
+        else:
+            subject = f"Notice"
 
-            if d.get('attachmentId'):
-                attachment_link = "https://beaconlightacademy.edu.pk/app/uploaded/"
-                attachments = f"Attachments: {attachment_link}{d['attachmentId']}"
-            else:
-                attachments = ""
-            
-            output.append(f'{subject}\n{details}\n{attachments}')
-        return output
-    else:
-        print('No diaries found.')
-        return None
+        # Append the attachment id to a link which redirects to the attachment.
 
+        if c.get('attachmentId'):
+            attachment_link = "https://beaconlightacademy.edu.pk/app/uploaded/"
+            attachments = f"Attachments: {attachment_link}{d['attachmentId']}"
+        else:
+            attachments = ""
+        
+        output.append(f'{subject}\n{details}\n{attachments}')
+    return output
 
 
-diaries = filter_diary()
+diaries = format_diary()
 
 for d in diaries:
     print(d)
