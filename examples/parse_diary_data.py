@@ -14,7 +14,8 @@ date = c.get_current_date()
 
 #Select student on your account to return their diary.
 
-student_id = c.student_ids[0]
+student_id = c.students[0].get('student_id')
+print(f"Attempting to get diaries for: {c.students[0].get('student_name')}")
 
 
 def filter_diary(date=date, been_read=True):
@@ -35,7 +36,7 @@ def format_diary():
     try:
         diary = filter_diary()
     except:
-        print('No Diaries founc.')
+        print('No Diaries found.')
         return []
 
     output = []

@@ -2,6 +2,7 @@ import datetime
 import json
 import httpx
 from fake_useragent import UserAgent as ua
+import re
 
 class Client:
     client = httpx.Client(verify=False) # instanciate 
@@ -11,9 +12,10 @@ class Client:
         self.headers = {'UserAgent': str(ua().chrome)}
         self.username = username
         self.password = password
-        self.token = self.login().get('token')
-        self.student_ids = self.login().get('student_ids')
-        self.student_names = self.login().get('student_names')
+        login_response=self.login()
+        self.token=login_response.get('token')
+        self.students=login_response.get('students')
+        
         
     def login(self):
         # Construct API endpoint URL
@@ -33,27 +35,33 @@ class Client:
         data = json.loads(response.content)['data']
         # Retrieve access token & student info from JSON response
         token = data.get('accessToken')
-        student_info = data.get('students')
+        student_data = data.get('students')
 
-        # Return student ids and student names as lists
-        student_ids = [] #Initialize
-        student_names = [] #Initialize
+        pattern=r'\((\d+[A-Z])\s+[A-Z]+\)'
 
-        for s in student_info:
-            # Return student ids as list
-            id = s.get('id')
-            student_ids.append(id)
+        # seperate student name and section from name and class string.
+        students=[]
 
-            # Return student name as list
-            name = s.get('studentName')
-            student_names.append(name)
-
+        for student in student_data:
+            string=student.get('studentName') # name, class and section string eg. 'Foo bar (69C M)'
+            match = re.search(pattern, string)
+            student_section=match.group(1)[-1]
+            student_class= match.group(1).strip(student_section) # remove section to get class
+            student_name = re.sub(pattern, '', string).strip()  # Remove the class and section part from the string
+            student_name = student_name.replace('  ', ' ') # remove double spaces from name
+            students.append(
+                {
+                'student_name': student_name,
+                'section': student_section,
+                'class': student_class,
+                'student_id': student.get('id'),
+                'gr_number': student.get('grNo'),
+                }
+            )
         # Return retrieved data as dictionary
         output = {
             'token': token,
-            'student_ids': student_ids,
-            'student_names': student_names
-
+            'students': students
         }
         return output
 

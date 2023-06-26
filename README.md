@@ -112,7 +112,7 @@ c = Client(username, password)
 
 > Keep in mind that In the api, the 'notificationId' and 'id' variables are used interchangeably.
 
-The **'login()'** method allows you to retrieve information such as: auth token, student names, student ids .
+The **'login()'** method allows you to retrieve information such as: auth token and student information such as class, section student_name, gr_number, student_id.
 
 The **'get_diary_list()'** method will return a list of all the diaries available in the app's database, which allows you to retrieve information such as: date posted, subject name, assignment id, notification id (id), title, description, diary type (cw/hw), if the diary has been read (bRead) and the student id which the diary corresponds to.
 
