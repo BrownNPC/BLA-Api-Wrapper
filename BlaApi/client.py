@@ -43,12 +43,16 @@ class Client:
         students=[]
 
         for student in student_data:
-            string=student.get('studentName') # name, class and section string eg. 'Foo bar (69C M)'
-            match = re.search(pattern, string)
-            student_section=match.group(1)[-1]
-            student_class= match.group(1).strip(student_section) # remove section to get class
-            student_name = re.sub(pattern, '', string).strip()  # Remove the class and section part from the string
+            string=student.get('studentName') # name, class and section string eg. 'Foo bar (69C M)'    
+            pattern=r'\((.*?)\)' # match values inside parenthesis
+            match = re.search(pattern, string) 
+
+            student_name=string.replace(match.group(0), '')
             student_name = student_name.replace('  ', ' ') # remove double spaces from name
+
+            student_class_section = match.group(1).split()[0] # will select '69C' from '69C M'
+            student_section = student_class_section[-1] # will select 'C' from '69C'
+            student_class=student_class_section.strip(student_section)# student_class=student_class_section.replace(student_section, '')
             students.append(
                 {
                 'student_name': student_name,
