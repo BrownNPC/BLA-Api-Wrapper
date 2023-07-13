@@ -12,11 +12,11 @@ URL = 'https://github.com/me/myproject'
 EMAIL = 'deaddogfuneral@gmail.com'
 AUTHOR = 'Omer-Farooqui'
 REQUIRES_PYTHON = '>=3.7.0'
-VERSION = '1.7'
+VERSION = '1.8'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-     'httpx', 'fake_useragent','html2text'
+     'httpx', 'fake_useragent','markdownify'
 ]
 
 # What packages are optional?

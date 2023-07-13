@@ -2,7 +2,8 @@ import datetime
 import json
 import httpx
 from fake_useragent import UserAgent as ua
-from html2text import html2text as h2t
+# from html2text import html2text as h2t
+from markdownify import markdownify
 import re
 
 class Client:
@@ -115,7 +116,7 @@ class Client:
             # Retrieve diary data from JSON response
             data = json.loads(response.content)['data']
             # parse diary details by converting to markdown
-            data['details'] = h2t(data.get('details'))
+            data['details'] = markdownify(data.get('details'))
             
             output.append(data)
 
