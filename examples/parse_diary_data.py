@@ -11,10 +11,12 @@ c = Client(username=username, password=password)
 #return diaries from this date
 
 date = c.get_current_date()
+date = 'Fri, 04/08/2023'
 
 #Select student on your account to return their diary.
 
 student_id = c.students[0].get('student_id')
+print(student_id)
 print(f"Attempting to get diaries for: {c.students[0].get('student_name')}")
 
 
@@ -44,25 +46,25 @@ def format_diary():
     for d in diary:
         # parse html and convert into markdown.
 
-        details = h2t(c.get('details'))
+        details = markdownify(d.get('details'))
 
         # remove markdown tags to get plain text.
 
-        details = details.replace('**', '')
+        details = details.replace('**', '*')
         details = details.replace('\\', '')
-        details = details.replace('   ', '')
+        details = details.replace('   ', ' ')
         details = details.replace('_', '')
 
         # If 'subject' field is empty, then it's a notice.
 
-        if c.get('subject'):
-            subject = f"Subject: {c.get('subject')}"
+        if d.get('subject'):
+            subject = f"Subject: {d.get('subject')}"
         else:
             subject = f"Notice"
 
         # Append the attachment id to a link which redirects to the attachment.
 
-        if c.get('attachmentId'):
+        if d.get('attachmentId'):
             attachment_link = "https://beaconlightacademy.edu.pk/app/uploaded/"
             attachments = f"Attachments: {attachment_link}{d['attachmentId']}"
         else:
