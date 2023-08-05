@@ -102,6 +102,7 @@ class Client:
             # Construct API endpoint URL
             endpoint = "diaryDetails"
             api_url = f"https://beaconlightacademy.edu.pk/app/restapi.php?endpoint={endpoint}&accessToken={self.token}&appUserNotificationId={notification_id}"
+            media_url='https://beaconlightacademy.edu.pk/app/uploaded/'
             
             # Send POST request to API endpoint with headers
             response = self.client.post(api_url, headers=self.headers)
@@ -116,8 +117,17 @@ class Client:
             # Retrieve diary data from JSON response
             data = json.loads(response.content)['data']
             # parse diary details by converting to markdown
-            data['details'] = markdownify(data.get('details'))
-            
+            # need try except statement because api sometimes returns ambigious ids
+            try:
+                data['details'] = markdownify(data.get('details'))
+            except TypeError:
+                data['details'] = None
+            # append url to attachment id
+            if data.get('attachment'):
+                data['attachment']=f'{media_url}{data.get("attachment")}'
+            # append url to attachment id
+            if data.get('attachment2'):
+                data['attachment2']=f'{media_url}{data.get("attachment2")}'
             output.append(data)
 
         return output
