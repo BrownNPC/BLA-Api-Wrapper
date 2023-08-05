@@ -79,7 +79,10 @@ The output consists of a list of dictionaries which contain details for the corr
         "id": "3049213",
         "appDiaryId": "64980",
         "title": "Class work - 13th April",
-        "details": "<p><strong>Book: TBS</strong></p><p><strong>Unit 06: Setting up a company</strong></p><p><strong>Chapter 01: Gathering information</strong></p><p>Chapter completed; discussed all activities. 'Sharpen your skills' also covered. </p><p><br></p>",
+        "details": "**Book: TBS**\n\
+**Unit 06: Setting up a company**\n
+**Chapter 01: Gathering information**\n\n
+Chapter completed; discussed all activities. 'Sharpen your skills' also covered.\n\n",
         "bRead": "1",
         "created": "2023-04-13 10:05:25",
         "diaryType": "cw",
@@ -96,7 +99,9 @@ The output consists of a list of dictionaries which contain details for the corr
 ]
 ```
 
-*Currently, there is no built-in way to parse this output, but I might add it in the future if needed. Check out some [examples](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/tree/master/examples) or read the [documentation.](#Documentation)*
+*The html is converted to markdown.* 
+
+>Check out some [examples](https://github.com/Omer-Farooqui/BLA-Api-Wrapper/tree/master/examples) or read the [documentation.](#Documentation)
 
 ## Documentation
 
