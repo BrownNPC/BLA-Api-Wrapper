@@ -74,7 +74,7 @@ class Client:
     def get_diary_list(self):
         # Construct API endpoint URL
         endpoint = "diaryList"
-        api_url = f"https://beaconlightacademy.edu.pk/app/restapi.php?endpoint={endpoint}&accessToken={self.token}&year=1"
+        api_url = f"https://beaconlightacademy.edu.pk/app/restapi.php?endpoint={endpoint}&accessToken={self.token}&year=2021"
         
         # Send POST request to API endpoint with headers
         response = self.client.post(api_url, headers=self.headers)
