@@ -132,7 +132,7 @@ class Client:
 
         return output
     
-    def search_by_student(self, passthru=None, student_id=None):
+    def search_by_student(self, student_id=None, passthru=None):
 
         diary = self.get_diary_list()
 

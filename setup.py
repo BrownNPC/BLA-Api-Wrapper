@@ -12,7 +12,7 @@ URL = 'https://github.com/me/myproject'
 EMAIL = 'deaddogfuneral@gmail.com'
 AUTHOR = 'Omer-Farooqui'
 REQUIRES_PYTHON = '>=3.7.0'
-VERSION = '1.9'
+VERSION = '2.1'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
