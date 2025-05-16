@@ -1,8 +1,14 @@
 # BLA-API-Wrapper.
 
+
 ## Description
 
 ##### Reverse engineering of [Beacon Light Academy's Homework App.](https://beaconlightacademy.edu.pk/app/)
+
+
+### Archived
+This was my first ever programming project. I had absolutely zero coding experience prior.
+I used this code to make a whatsapp bot to update my classmates on homework (the school's app did not have push notifications). The bot had around 30 users the time. I polished this library up to make a better app than what my school had, halfway through said app's development I ended up leaving the school. I am archiving this project to add some context, and also because I did not end up using this. 
 
 ### Table of Contents
 
